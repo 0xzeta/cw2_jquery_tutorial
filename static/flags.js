@@ -22,7 +22,7 @@ $(function(){
 	var gr=$('<div/>');
 	gr.append($('<div/>',{text:'Greece'}));
 	gr.append($('<img/>',{src:'../static/gr.gif'}));
-	$('body').append(gr,'<br>');
+	$('body').append(gr,'<br>--------------------------------------<br>');
 });
 ////End adding structure and images
 
@@ -57,15 +57,24 @@ $(function(){
 		];
 	$(function(){
 		createOne();
-	})
-	function createOne(){
+	});
+	$(function createOne(){
 		var i=Math.floor(clist.length*Math.random());
 		var code=clist[i][0];
 		var name=clist[i][1];
 		var qu=$('<div id="qu"/>');
-		qu.append($('<div/>',{text:name,id:'ans'}));
+		qu.append($('<div/>',{text:name,id:'ans'}).hide());
 		qu.append($('<img/>',{src:'../static/'+code+'.gif'}));
+		qu.append($('<input/>',{id:'response'}));
 		$('body').append(qu);
+	});
+});
+
+$(function(){
+	$('#response').keyup(function(){
+	if($('#response').val()==$('#ans').text()){
+		alert("Well Done");
 	}
+	});
 });
 //End Using an Array of values
