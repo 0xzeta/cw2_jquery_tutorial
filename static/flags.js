@@ -67,14 +67,28 @@ $(function(){
 		qu.append($('<img/>',{src:'../static/'+code+'.gif'}));
 		qu.append($('<input/>',{id:'response'}));
 		$('body').append(qu);
+		$('#response').keyup(function(){
+			if($('#response').val()==$('#ans').text()){
+				alert("Well Done");
+			}
+			});
 	});
+//css
+	$(function(){
+	$('#qu').css('border','solid 3px gray');
+	$('#qu').css('width',350);
+	$('#qu').css('padding','24px');
+//end css
+
 });
 
-$(function(){
-	$('#response').keyup(function(){
-	if($('#response').val()==$('#ans').text()){
-		alert("Well Done");
-	}
-	});
 });
+
+// $(function(){
+// 	$('#response').keyup(function(){
+// 	if($('#response').val()==$('#ans').text()){
+// 		alert("Well Done");
+// 	}
+// 	});
+// });
 //End Using an Array of values
